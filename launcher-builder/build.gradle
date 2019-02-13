@@ -1,6 +1,4 @@
-plugins {
-    id "com.github.johnrengelman.shadow"
-}
+apply plugin: 'com.github.johnrengelman.shadow'
 
 jar {
     manifest {
@@ -15,6 +13,9 @@ dependencies {
 }
 
 shadowJar {
+    dependencies {
+        exclude(dependency('org.projectlombok:lombok'))
+    }
 }
 
 build.dependsOn(shadowJar)
