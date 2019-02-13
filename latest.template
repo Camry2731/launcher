@@ -1,0 +1,4 @@
+{
+    "version": "${LAUNCHER_VERSION}",
+    "url": "https://minecraft.routh.io/launcher/versions/${LAUNCHER_VERSION}.jar.pack"
+}

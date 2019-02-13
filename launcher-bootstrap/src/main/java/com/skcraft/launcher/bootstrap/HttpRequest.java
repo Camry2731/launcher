@@ -24,7 +24,7 @@ import static com.skcraft.launcher.bootstrap.BootstrapUtils.closeQuietly;
 
 /**
  * A simple fluent interface for performing HTTP requests that uses
- * {@link java.net.HttpURLConnection} or {@link javax.net.ssl.HttpsURLConnection}.
+ * {@link HttpURLConnection} or {@link javax.net.ssl.HttpsURLConnection}.
  */
 @Log
 public class HttpRequest implements Closeable, ProgressObservable {
@@ -86,7 +86,7 @@ public class HttpRequest implements Closeable, ProgressObservable {
      * After execution, {@link #close()} should be called.
      *
      * @return this object
-     * @throws java.io.IOException on I/O error
+     * @throws IOException on I/O error
      */
     public HttpRequest execute() throws IOException {
         boolean successful = false;
@@ -164,7 +164,7 @@ public class HttpRequest implements Closeable, ProgressObservable {
      *
      * @param codes a list of codes
      * @return this object
-     * @throws java.io.IOException if there is an I/O error or the response code is not expected
+     * @throws IOException if there is an I/O error or the response code is not expected
      */
     public HttpRequest expectResponseCode(int... codes) throws IOException {
         int responseCode = getResponseCode();
@@ -183,7 +183,7 @@ public class HttpRequest implements Closeable, ProgressObservable {
      * Get the response code.
      *
      * @return the response code
-     * @throws java.io.IOException on I/O error
+     * @throws IOException on I/O error
      */
     public int getResponseCode() throws IOException {
         if (conn == null) {
@@ -206,7 +206,7 @@ public class HttpRequest implements Closeable, ProgressObservable {
      * Buffer the returned response.
      *
      * @return the buffered response
-     * @throws java.io.IOException  on I/O error
+     * @throws IOException  on I/O error
      * @throws InterruptedException on interruption
      */
     public BufferedResponse returnContent() throws IOException, InterruptedException {
@@ -232,7 +232,7 @@ public class HttpRequest implements Closeable, ProgressObservable {
      *
      * @param file the file
      * @return this object
-     * @throws java.io.IOException  on I/O error
+     * @throws IOException  on I/O error
      * @throws InterruptedException on interruption
      */
     public HttpRequest saveContent(File file) throws IOException, InterruptedException {
@@ -257,7 +257,7 @@ public class HttpRequest implements Closeable, ProgressObservable {
      *
      * @param out the output stream
      * @return this object
-     * @throws java.io.IOException  on I/O error
+     * @throws IOException  on I/O error
      * @throws InterruptedException on interruption
      */
     public HttpRequest saveContent(OutputStream out) throws IOException, InterruptedException {
@@ -337,7 +337,7 @@ public class HttpRequest implements Closeable, ProgressObservable {
     }
 
     /**
-     * Create a new {@link java.net.URL} and throw a {@link RuntimeException} if the URL
+     * Create a new {@link URL} and throw a {@link RuntimeException} if the URL
      * is not valid.
      *
      * @param url the url
@@ -448,7 +448,7 @@ public class HttpRequest implements Closeable, ProgressObservable {
          *
          * @param encoding the encoding
          * @return the string
-         * @throws java.io.IOException on I/O error
+         * @throws IOException on I/O error
          */
         public String asString(String encoding) throws IOException {
             return new String(data, encoding);
@@ -459,7 +459,7 @@ public class HttpRequest implements Closeable, ProgressObservable {
          * deserialized from a XML payload.
          *
          * @return the object
-         * @throws java.io.IOException on I/O error
+         * @throws IOException on I/O error
          */
         @SuppressWarnings("unchecked")
         public <T> T asXml(Class<T> cls) throws IOException {
@@ -477,7 +477,7 @@ public class HttpRequest implements Closeable, ProgressObservable {
          *
          * @param file the file
          * @return this object
-         * @throws java.io.IOException  on I/O error
+         * @throws IOException  on I/O error
          * @throws InterruptedException on interruption
          */
         public BufferedResponse saveContent(File file) throws IOException, InterruptedException {
@@ -504,7 +504,7 @@ public class HttpRequest implements Closeable, ProgressObservable {
          *
          * @param out the output stream
          * @return this object
-         * @throws java.io.IOException  on I/O error
+         * @throws IOException  on I/O error
          * @throws InterruptedException on interruption
          */
         public BufferedResponse saveContent(OutputStream out) throws IOException, InterruptedException {

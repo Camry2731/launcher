@@ -47,7 +47,7 @@ public final class SwingHelper {
      *                        null to use the default frame
      * @param message the message to display
      * @param title the title string for the dialog
-     * @see #showMessageDialog(java.awt.Component, String, String, String, int) for details
+     * @see #showMessageDialog(Component, String, String, String, int) for details
      */
     public static void showErrorDialog(Component parentComponent, @NonNull String message,
                                        @NonNull String title) {
@@ -63,7 +63,7 @@ public final class SwingHelper {
      * @param message the message to display
      * @param title the title string for the dialog
      * @param throwable the exception, or null if there is no exception to show
-     * @see #showMessageDialog(java.awt.Component, String, String, String, int) for details
+     * @see #showMessageDialog(Component, String, String, String, int) for details
      */
     public static void showErrorDialog(Component parentComponent, @NonNull String message,
                                        @NonNull String title, Throwable throwable) {
@@ -84,7 +84,7 @@ public final class SwingHelper {
 
     /**
      * Show a message dialog using
-     * {@link javax.swing.JOptionPane#showMessageDialog(java.awt.Component, Object, String, int)}.
+     * {@link JOptionPane#showMessageDialog(Component, Object, String, int)}.
      *
      * <p>The dialog will be shown from the Event Dispatch Thread, regardless of the
      * thread it is called from. In either case, the method will block until the
@@ -94,7 +94,7 @@ public final class SwingHelper {
      *                        null to use the default frame
      * @param message the message to display
      * @param title the title string for the dialog
-     * @param messageType see {@link javax.swing.JOptionPane#showMessageDialog(java.awt.Component, Object, String, int)}
+     * @param messageType see {@link JOptionPane#showMessageDialog(Component, Object, String, int)}
      *                    for available message types
      */
     public static void showMessageDialog(final Component parentComponent,
@@ -208,7 +208,7 @@ public final class SwingHelper {
     /**
      * Focus a component.
      *
-     * <p>The focus call happens in {@link javax.swing.SwingUtilities#invokeLater(Runnable)}.</p>
+     * <p>The focus call happens in {@link SwingUtilities#invokeLater(Runnable)}.</p>
      * 
      * @param component the component
      */

@@ -49,9 +49,9 @@ public class ZipExtract implements Runnable {
                     if (entry.isDirectory()) {
                         file.mkdirs();
                     } else {
-                        writeEntry(zis, file);
-                    }
+                    writeEntry(zis, file);
                 }
+            }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

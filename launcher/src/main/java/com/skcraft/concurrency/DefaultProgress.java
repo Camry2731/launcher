@@ -9,7 +9,7 @@ package com.skcraft.concurrency;
 import lombok.Data;
 
 /**
- * A simple default implementation of {@link com.skcraft.concurrency.ProgressObservable}
+ * A simple default implementation of {@link ProgressObservable}
  * with settable properties.
  */
 @Data

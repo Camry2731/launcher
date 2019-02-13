@@ -74,7 +74,7 @@ public final class Launcher {
      * Create a new launcher instance with the given base directory.
      *
      * @param baseDir the base directory
-     * @throws java.io.IOException on load error
+     * @throws IOException on load error
      */
     public Launcher(@NonNull File baseDir) throws IOException {
         this(baseDir, baseDir);
@@ -86,7 +86,7 @@ public final class Launcher {
      *
      * @param baseDir the base directory
      * @param configDir the config directory
-     * @throws java.io.IOException on load error
+     * @throws IOException on load error
      */
     public Launcher(@NonNull File baseDir, @NonNull File configDir) throws IOException {
         SharedLocale.loadBundle("com.skcraft.launcher.lang.Launcher", Locale.getDefault());
@@ -358,36 +358,6 @@ public final class Launcher {
         return HttpRequest.url(prop(key));
     }
 
-    public static URL getMetaURL(String version) throws IOException, InterruptedException {
-        URL url = new URL("https://launchermeta.mojang.com/mc/game/version_manifest.json");
-        LauncherJSON launcherJSON = HttpRequest
-                .get(url)
-                .execute()
-                .expectResponseCode(200)
-                .returnContent()
-                .asJson(LauncherJSON.class);
-        for(ModpackVersion mpVersion : launcherJSON.getVersions()) {
-            if(mpVersion.getID().equalsIgnoreCase(version)) {
-                return new URL(mpVersion.getURL());
-            }
-        }
-        return null;
-    }
-
-    public static String getDownloadURL(String version) throws IOException, InterruptedException {
-        URL url = getMetaURL(version);
-        if(url == null) {
-            return "";
-        }
-        ModJSON modJson = HttpRequest
-                .get(url)
-                .execute()
-                .expectResponseCode(200)
-                .returnContent()
-                .asJson(ModJSON.class);
-        return modJson.getDownloads().getClient().getUrl();
-    }
-    
     /**
      * Convenient method to fetch a property.
      *

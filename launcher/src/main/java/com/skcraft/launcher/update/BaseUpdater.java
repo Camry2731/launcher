@@ -44,7 +44,7 @@ import static com.skcraft.launcher.LauncherUtils.concat;
  * and updating Minecraft (including the launcher's modpacks), such as asset
  * downloading, .jar downloading, and so on.
  * </p>
- * Updating actually starts in {@link com.skcraft.launcher.update.Updater},
+ * Updating actually starts in {@link Updater},
  * which is the update worker. This class exists to allow updaters that don't
  * use the launcher's default modpack format to reuse these update
  * routines. (It also makes the size of the <code>Updater</code> class smaller.)

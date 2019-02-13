@@ -90,7 +90,7 @@ public class WinRegistry {
      * @return the value
      * @throws IllegalArgumentException
      * @throws IllegalAccessException
-     * @throws java.lang.reflect.InvocationTargetException
+     * @throws InvocationTargetException
      */
     public static String readString(int hkey, String key, String valueName)
             throws IllegalArgumentException, IllegalAccessException,
@@ -113,7 +113,7 @@ public class WinRegistry {
      * @return the value name(s) plus the value(s)
      * @throws IllegalArgumentException
      * @throws IllegalAccessException
-     * @throws java.lang.reflect.InvocationTargetException
+     * @throws InvocationTargetException
      */
     public static Map<String, String> readStringValues(int hkey, String key)
             throws IllegalArgumentException, IllegalAccessException,
@@ -136,7 +136,7 @@ public class WinRegistry {
      * @return the value name(s)
      * @throws IllegalArgumentException
      * @throws IllegalAccessException
-     * @throws java.lang.reflect.InvocationTargetException
+     * @throws InvocationTargetException
      */
     public static List<String> readStringSubKeys(int hkey, String key)
             throws IllegalArgumentException, IllegalAccessException,
@@ -158,7 +158,7 @@ public class WinRegistry {
      * @param key
      * @throws IllegalArgumentException
      * @throws IllegalAccessException
-     * @throws java.lang.reflect.InvocationTargetException
+     * @throws InvocationTargetException
      */
     public static void createKey(int hkey, String key)
             throws IllegalArgumentException, IllegalAccessException,
@@ -188,7 +188,7 @@ public class WinRegistry {
      * @param value
      * @throws IllegalArgumentException
      * @throws IllegalAccessException
-     * @throws java.lang.reflect.InvocationTargetException
+     * @throws InvocationTargetException
      */
     public static void writeStringValue(int hkey, String key, String valueName,
             String value) throws IllegalArgumentException,
@@ -209,7 +209,7 @@ public class WinRegistry {
      * @param key
      * @throws IllegalArgumentException
      * @throws IllegalAccessException
-     * @throws java.lang.reflect.InvocationTargetException
+     * @throws InvocationTargetException
      */
     public static void deleteKey(int hkey, String key)
             throws IllegalArgumentException, IllegalAccessException,
@@ -233,7 +233,7 @@ public class WinRegistry {
      * @param value
      * @throws IllegalArgumentException
      * @throws IllegalAccessException
-     * @throws java.lang.reflect.InvocationTargetException
+     * @throws InvocationTargetException
      */
     public static void deleteValue(int hkey, String key, String value)
             throws IllegalArgumentException, IllegalAccessException,

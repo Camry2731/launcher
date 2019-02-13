@@ -1,0 +1,26 @@
+image: registry.routh.io/docker/java/ubuntu/18.04:8-devel
+
+variables:
+  LAUNCHER_VERSION: 4.4.8
+  TOOLS_VERSION: 2.0.2-SNAPSHOT
+
+stages:
+- compile-launcher
+- promote
+- deploy
+- cleanup
+
+build-launcher-and-creator-tools:
+  stage: compile-launcher
+  dependencies: []
+  when: always
+  artifacts:
+    paths:
+      - build/release/*
+    expire_in: 1 week
+  tags:
+  - docker-mode
+  - build
+  script:
+  - ./build.sh
+  - ./pack.sh ${LAUNCHER_VERSION} ${TOOLS_VERSION}

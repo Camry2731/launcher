@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 
 /**
  * Classes that are annotated with this will be saved <em>scrambled</em>
- * to disk when saved using {@link com.skcraft.launcher.persistence.Persistence}.
+ * to disk when saved using {@link Persistence}.
  * </p>
  * The data may be scrambled using an encryption algorithm, but it's not
  * done with security in mind. Decryption requires a key, and that
