@@ -21,7 +21,7 @@ import java.nio.charset.Charset;
 
 /**
  * Walks a path and adds hashed path versions to the given
- * {@link com.skcraft.launcher.model.modpack.Manifest}.
+ * {@link Manifest}.
  */
 @Log
 public class ClientFileCollector extends DirectoryWalker {

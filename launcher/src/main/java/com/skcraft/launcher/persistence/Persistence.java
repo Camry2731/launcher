@@ -65,7 +65,7 @@ public final class Persistence {
      * Save an object to file.
      *
      * @param object the object
-     * @throws java.io.IOException on save error
+     * @throws IOException on save error
      */
     public static void commit(@NonNull Object object) throws IOException {
         ByteSink sink;
@@ -211,7 +211,7 @@ public final class Persistence {
      *
      * @param file the file
      * @param object the object
-     * @throws java.io.IOException on I/O error
+     * @throws IOException on I/O error
      */
     public static void write(File file, Object object) throws IOException {
         write(file, object, null);
@@ -223,7 +223,7 @@ public final class Persistence {
      * @param file the file
      * @param object the object
      * @param prettyPrinter a pretty printer to use, or null
-     * @throws java.io.IOException on I/O error
+     * @throws IOException on I/O error
      */
     public static void write(File file, Object object, PrettyPrinter prettyPrinter) throws IOException {
         file.getParentFile().mkdirs();
@@ -239,7 +239,7 @@ public final class Persistence {
      *
      * @param object the object
      * @param prettyPrinter a pretty printer to use, or null
-     * @throws java.io.IOException on I/O error
+     * @throws IOException on I/O error
      */
     public static String writeValueAsString(Object object, PrettyPrinter prettyPrinter) throws IOException {
         if (prettyPrinter != null) {

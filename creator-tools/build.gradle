@@ -1,6 +1,4 @@
-plugins {
-    id "com.github.johnrengelman.shadow"
-}
+apply plugin: "com.github.johnrengelman.shadow"
 
 version = "2.0.2-SNAPSHOT"
 sourceCompatibility = 1.8
@@ -27,6 +25,9 @@ jar {
 }
 
 shadowJar {
+    dependencies {
+        exclude(dependency('org.projectlombok:lombok'))
+    }
 }
 
 build.dependsOn(shadowJar)

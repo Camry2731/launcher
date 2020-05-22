@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * Abstract class to recursively walk a directory, keep track of a relative
  * path (which may be modified by dropping certain directory entries),
- * and call {@link #onFile(java.io.File, String)} with each file.
+ * and call {@link #onFile(File, String)} with each file.
  */
 public abstract class DirectoryWalker {
 

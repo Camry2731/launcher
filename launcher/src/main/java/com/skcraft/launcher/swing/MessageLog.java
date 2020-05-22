@@ -106,7 +106,7 @@ public class MessageLog extends JPanel {
     }
     
     /**
-     * Log a message given the {@link javax.swing.text.AttributeSet}.
+     * Log a message given the {@link AttributeSet}.
      * 
      * @param line line
      * @param attributes attribute set, or null for none

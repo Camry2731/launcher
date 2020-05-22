@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 
 /**
- * Handles loading a shared message {@link java.util.ResourceBundle}.
+ * Handles loading a shared message {@link ResourceBundle}.
  */
 @Log
 public class SharedLocale {
